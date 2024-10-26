@@ -1,0 +1,183 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #0000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Bar */
+.navbar {
+    background: #FF0000;
+    color: #0000;
+    padding: 10px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0000;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 32px;
+    color: #333;
+}
+
+/* Account Information Section */
+.account-info {
+    margin-bottom: 30px;
+}
+
+.account-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #FF0000;
+}
+
+.account-info p {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* Recent Payments Section */
+.recent-payments {
+    margin-bottom: 30px;
+}
+
+.recent-payments h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #FF0000;
+}
+
+.payments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.payments-table th,
+.payments-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.payments-table th {
+    background: #FF0000;
+    color: #fff;
+}
+
+.payments-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Quick Actions Section */
+.actions {
+    text-align: center;
+}
+
+.actions h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #FF0000;
+}
+
+.actions .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #FF0000;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px 5px;
+}
+
+.actions .button:hover {
+    background: #FF0000;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #FF0000;
+    color: #fff;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+    }
+
+    .navbar .nav-links {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .actions .button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

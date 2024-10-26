@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthty Pay - Payment History</title>
+    <link rel="stylesheet" href="style6.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Payment History</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="paymentHistory">
+                <!-- Payment records will be displayed here -->
+            </tbody>
+        </table>
+        <p><a href="payment.html">Make Another Payment</a></p>
+    </div>
+
+    <script>
+        // Load payment history from local storage
+        const payments = JSON.parse(localStorage.getItem('payments')) || [];
+        const paymentHistory = document.getElementById('paymentHistory');
+
+        if (payments.length === 0) {
+            paymentHistory.innerHTML = "<tr><td colspan='3'>No payment history found.</td></tr>";
+        } else {
+            payments.forEach(payment => {
+                const row = `<tr>
+                    <td>${payment.date}</td>
+                    <td>${payment.description}</td>
+                    <td>$${payment.amount.toFixed(2)}</td>
+                </tr>`;
+                paymentHistory.innerHTML += row;
+            });
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 Healthty Pay. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+

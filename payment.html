@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthty Pay - Make Payment</title>
+    <link rel="stylesheet" href="style6.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Make a Payment</h1>
+        <form id="paymentForm">
+            <input type="text" id="Description" placeholder="Payment Description" required>
+            <input type="number" id="paymentAmount" placeholder="Amount" required>
+            <button type="submit" class="button">Submit Payment</button>
+        </form>
+        <p>View your payment history: <a href="payments.html">Payment History</a></p>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get user input
+            const description = document.getElementById('paymenttitle').value;
+            const amount = parseFloat(document.getElementById('paymentAmount').value);
+
+            // Simulate saving payment data in local storage
+            let payments = JSON.parse(localStorage.getItem('payments')) || [];
+            payments.push({ description, amount, date: new Date().toLocaleString() });
+            localStorage.setItem('payments', JSON.stringify(payments));
+
+            // Redirect to payments.html after payment submission
+            window.location.href = "payments.html";
+        });
+    </script>
+     <footer>
+        <p>&copy; 2024 Healthty Pay. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
